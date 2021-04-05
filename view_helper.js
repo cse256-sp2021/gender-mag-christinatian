@@ -483,7 +483,7 @@ function define_new_user_select_field(id_prefix, select_button_text, on_user_cha
             <button id="${id_prefix}_button" class="ui-button ui-widget ui-corner-all">${select_button_text}</button>
         </div>`)
 
-    // Open user select on button click:
+   // Open user select on button click:
     sel_section.find(`#${id_prefix}_button`).click(function(){
         open_user_select_dialog(`${id_prefix}_field`)
     })

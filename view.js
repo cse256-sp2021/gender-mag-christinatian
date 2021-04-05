@@ -1,6 +1,46 @@
 // ---- Define your dialogs  and panels here ----
 
+// START
+// call define_new_effective_permissions function, store the result in variable -- Step 1/2
+    newPanel = define_new_effective_permissions("panelFirst", add_info_col = true, which_permissions = null);
+    $('#sidepanel').append(newPanel);
 
+//Step 3/4
+    user_select = define_new_user_select_field("id_name", "select user", function(selected_user) {
+        // insert stuff into the function
+        $('#id_name').attr('username', selected_user);
+    });
+    $('#sidepanel').append(user_select);
+
+        // connect user selector and the effective permissions step 4
+        $('#id_name').attr('filepath','/C/presentation_documents/important_file.txt');
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Permissions STEP 1
+dialog1 = define_new_dialog ('id_name', title = 'hello');
+
+// Permissions STEP 2-4
+    $('.perm_info').click(function(){
+        // stuff that should happen on click goes here
+        dialog1.dialog('open');
+        //console.log('clicked!')
+        explain1 = allow_user_action(path_to_file[$('#id_name').attr('filepath')], all_users[$('#id_name').attr('username')], $(this).attr('permission_name'), explain_who)
+        dialog1.html(get_explanation_text(explain1));
+    }
+
+
+// END
 
 // ---- Display file structure ----
 
