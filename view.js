@@ -6,7 +6,7 @@
     $('#sidepanel').append(newPanel);
 
 //Step 3/4
-    user_select = define_new_user_select_field("id_name", "select user", function(selected_user) {
+    user_select = define_new_user_select_field("id_name", "Select User To View Permissions", function(selected_user) {
         // insert stuff into the function
         $('#id_name').attr('username', selected_user);
     });
@@ -17,27 +17,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 // Permissions STEP 1
-dialog1 = define_new_dialog ('id_name', title = 'hello');
+dialog1 = define_new_dialog ('id_name', title = 'Info Permissions');
 
 // Permissions STEP 2-4
     $('.perm_info').click(function(){
         // stuff that should happen on click goes here
         dialog1.dialog('open');
         //console.log('clicked!')
-        explain1 = allow_user_action(path_to_file[$('#id_name').attr('filepath')], all_users[$('#id_name').attr('username')], $(this).attr('permission_name'), explain_who)
+        explain1 = allow_user_action(path_to_file[$('#id_name').attr('filepath')], all_users[$('#id_name').attr('username')], $(this).attr('permission_name'), explain_why=true);
         dialog1.html(get_explanation_text(explain1));
-    }
+    });
 
 
 // END
