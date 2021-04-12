@@ -3,8 +3,23 @@
     border-bottom: 1px solid #dddddd;
 }
 
+/* move it up */
+#id_name_line{
+    margin-top: -290px;
+}
+
+#id_name{
+    margin-top: 30px;
+    margin-top: 30px;
+}
+}
+#advtabs{
+    margin-top: 40px;
+}
+/* end of changes */
+
 .section {
-    margin-top: -300px;
+    margin-bottom: 5px;
 }
 
 .ui-selected { 
