@@ -2,11 +2,11 @@
 
 // START
 // call define_new_effective_permissions function, store the result in variable -- Step 1/2
-    newPanel = define_new_effective_permissions("id_name", add_info_col = true, which_permissions = null);
+    newPanel = define_new_effective_permissions("panelFirst", add_info_col = true, which_permissions = null);
     $('#sidepanel').append(newPanel);
 
 //Step 3/4
-    user_select = define_new_user_select_field("id_name", "Select User To View Permissions", on_user_change = function(selected_user) {
+    user_select = define_new_user_select_field("id_name", "Select User To View Permissions", function(selected_user) {
         // insert stuff into the function
         $('#id_name').attr('username', selected_user);
     });
@@ -25,9 +25,9 @@ dialog1 = define_new_dialog ('id_name', title = 'Info Permissions');
         // stuff that should happen on click goes here
         dialog1.dialog('open');
         //console.log('clicked!')
-        explain1 = allow_user_action(path_to_file[$('#id_name').attr('filepath')], all_users[$('#id_name').attr('username')], $(this).attr('permission_name'), explain_why = true);
+        explain1 = allow_user_action(path_to_file[$('#id_name').attr('filepath')], all_users[$('#id_name').attr('username')], $(this).attr('permission_name'), explain_why=true);
         dialog1.html(get_explanation_text(explain1));
-    })
+    });
 
 
 // END
